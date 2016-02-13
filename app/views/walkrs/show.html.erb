@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @walkr.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @walkr.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @walkr.picture %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @walkr.rating %>
+</p>
+
+<%= link_to 'Edit', edit_walkr_path(@walkr) %> |
+<%= link_to 'Back', walkrs_path %>
