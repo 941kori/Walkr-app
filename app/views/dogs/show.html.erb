@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <table align="center">
   <thead>
     <tr>
@@ -7,42 +8,19 @@
       <th>Name</th>
       <th>Description</th>
       <th>Rating</th>
-      <th colspan="2">Admin</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @dogs.each do |dog| %>
       <tr>
-        <td><img style="width:200px" src="<%= dog.picture %>" alt="<%= dog.name %>" ></td>
-        <td><%= link_to dog.name, dog_path(dog) %></td>
-        <td><%= dog.description %></td>
-        <td><%= dog.rating %></td>
-        <td><%= link_to 'Show', dog %><br><br><%= link_to 'Edit', edit_dog_path(dog) %><br><br><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><img style="width:200px" src="<%= @dog.picture %>" alt="<%= @dog.name %>" ></td>
+        <td><%= @dog.name %></td>
+        <td><%= @dog.description %></td>
+        <td><%= @dog.rating %></td>
       </tr>
-    <% end %>
+
   </tbody>
 </table>
-
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @dog.description %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <a href="<%= @dog.picture %>"><img style="width:300px" src="<%= @dog.picture %>" alt="<%= @dog.name %>" ></a>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @dog.rating %>
-</p>
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <%= link_to 'Back', dogs_path %>
