@@ -1,33 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Walkrs</h1>
+<div class="list" style="padding-left:4em"><h1>Walkrs</h1></div>
+<div class="pure-button"><%= link_to 'Add a Walkr', new_walkr_path %></div>
 
-<table>
+<table align="center">
   <thead>
     <tr>
+      <th>Picture</th>
       <th>Name</th>
       <th>Description</th>
-      <th>Picture</th>
       <th>Rating</th>
-      <th colspan="3"></th>
+      <th colspan="3">Admin</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @walkrs.each do |walkr| %>
-      <tr>
-        <td><%= walkr.name %></td>
-        <td><%= walkr.description %></td>
-        <td><img style="width:300px" src="<%= walkr.picture %>"></td>
-        <td><%= walkr.rating %></td>
-        <td><%= link_to 'Show', walkr %></td>
-        <td><%= link_to 'Edit', edit_walkr_path(walkr) %></td>
-        <td><%= link_to 'Destroy', walkr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <% @walkrs.each do |walkr| %>
+    <tr>
+      <td><img style="width:200px" src="<%= walkr.picture %>" alt="<%= walkr.name %>" ></td>
+      <td><%= link_to walkr.name, walkr_path(walkr) %></td>
+      <td><%= walkr.description %></td>
+      <td><%= walkr.rating %></td>
+      <td><%= link_to 'Show', walkr %><br><br><%= link_to 'Edit', edit_walkr_path(walkr) %><br><br><%= link_to 'Destroy', walkr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Walkr', new_walkr_path %>

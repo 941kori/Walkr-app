@@ -1,5 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<table align="center">
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Rating</th>
+      <th colspan="2">Admin</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogs.each do |dog| %>
+      <tr>
+        <td><img style="width:200px" src="<%= dog.picture %>" alt="<%= dog.name %>" ></td>
+        <td><%= link_to dog.name, dog_path(dog) %></td>
+        <td><%= dog.description %></td>
+        <td><%= dog.rating %></td>
+        <td><%= link_to 'Show', dog %><br><br><%= link_to 'Edit', edit_dog_path(dog) %><br><br><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <p>
   <strong>Name:</strong>
   <%= @dog.name %>
