@@ -10,6 +10,14 @@ root 'home#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
+get 'dogs' => 'dogs#index'
+get 'dog' => 'dogs#show'
+get 'dogs/:id' => 'dogs#show'
+get 'walkrs' => 'walkrs#index'
+get 'walkr' => 'walkrs#show'
+get 'walkrs/:id' => 'walkrs#show'
+
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

@@ -10,6 +10,7 @@ class WalkrsController < ApplicationController
   # GET /walkrs/1
   # GET /walkrs/1.json
   def show
+    @walkr = Walkr.find(params[:id])
   end
 
   # GET /walkrs/new
