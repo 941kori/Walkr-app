@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <title>Walkr</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+=======
+
+
+  <title>Walker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+>>>>>>> log-in-log-out
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
@@ -22,7 +29,10 @@
     </div>
 </div>
 <body>
-
+  <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        <% end %>
 <%= yield %>
 
 </body>
