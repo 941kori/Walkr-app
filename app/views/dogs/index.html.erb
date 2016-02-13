@@ -16,9 +16,9 @@
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
-        <td><%= dog.name %></td>
+        <td><%= link_to dog.name, dog_path(dog) %></td>
         <td><%= dog.description %></td>
-        <td><%= dog.picture %></td>
+        <td><img style="width:300px" src="<%= dog.picture %>" alt="<%= dog.name %>" ></td>
         <td><%= dog.rating %></td>
         <td><%= link_to 'Show', dog %></td>
         <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
