@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :logged_in_user, only: [:index, :edit, :update]
+ before_action :logged_in_user, only: [:index, :edit, :update]
  before_action :correct_user,   only: [:edit, :update]
  def index
     @users = User.all
@@ -17,7 +17,7 @@ before_action :logged_in_user, only: [:index, :edit, :update]
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to Walkr!"
       redirect_to @user
     else
       render 'new'
@@ -40,14 +40,14 @@ before_action :logged_in_user, only: [:index, :edit, :update]
   end
 
   private
-  def user_params
+    def user_params
        params.require(:user).permit(:name, :email, :password,
                                     :password_confirmation)
-     end
+    end
 
      # Before filters
 
-     
+
 
     # Confirms the correct user.
     def correct_user
