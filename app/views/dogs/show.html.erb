@@ -26,6 +26,7 @@
     <h4><%= @dog.name %></h4>
     <p><%= @dog.description %><br><br></p>
     <p><%= @dog.rating %><br><br></p>
+<%= hidden %>
     <p><%= link_to 'Edit', edit_dog_path(@dog) %><br><br></p>
     <p><%= link_to 'Destroy', @dog, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
