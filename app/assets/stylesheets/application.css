@@ -18,6 +18,8 @@
      -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
      box-sizing: border-box;
+     text-decoration: none;
+
  }
 
  /*
@@ -34,12 +36,19 @@
  h1,
  h2,
  h3,
- h4,
  h5,
  h6,
  label {
      color: #34495e;
      line-height: 2;
+     text-transform: uppercase;
+
+ }
+
+ h4 {
+   color: black;
+   text-transform: uppercase;
+   line-height: 1;
  }
 
  .pure-img-responsive {
@@ -98,14 +107,39 @@
      color: white;
      padding: 0.5em 2em;
      border-radius: 5px;
+     font-size: 80%;
  }
 
- a.pure-button-primary {
+ .pure-button-right {
+     background-color: #1f8dd6;
+     color: white;
+     padding: 0.5em 2em;
+     border-radius: 5px;
+     float: right;
+ }
+
+ .pure-button-right a {
+     color: white;
+     float: right;
+     text-transform: uppercase;
+     font-size: 80%;
+ }
+
+ .pure-button-right a:hover {
+     color: white;
+     float: right;
+     text-transform: uppercase;
+     font-size: 80%;
+     background: #1f8dd6;
+ }
+
+ /*a.pure-button-primary {
      background: white;
      color: #1f8dd6;
      border-radius: 5px;
      font-size: 120%;
- }
+     text-decoration: none;
+ }*/
 
 
  /*
@@ -114,38 +148,51 @@
   */
 
  .home-menu {
-     padding: 0.5em;
      text-align: center;
-     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
  }
  .home-menu {
-     background: #2d3e50;
+     background: #1f8dd6;
  }
  .pure-menu.pure-menu-fixed {
-     /* Fixed menus normally have a border at the bottom. */
-     border-bottom: none;
-     /* I need a higher z-index here because of the scroll-over effect. */
      z-index: 4;
  }
 
  .home-menu .pure-menu-heading {
      color: white;
-     font-weight: 400;
      font-size: 120%;
  }
 
  .home-menu .pure-menu-selected a {
      color: white;
+     background-color: black;
  }
 
- .home-menu a {
-     color: #6FBEF3;
+ /*.home-menu a {
+     font-size: 120%;
+     color: white;
+     text-transform: uppercase;
+     line-height: 2em;
+ }*/
+
+ .home-menu li a {
+     font-size: 120%;
+     color: white;
+     line-height: 2em;
+     text-transform: uppercase;
  }
+
+ .home-menu li a.selected {
+     font-size: 120%;
+     color: white;
+     line-height: 2em;
+     text-transform: uppercase;
+ }
+
  .home-menu li a:hover,
  .home-menu li a:focus {
-     background: none;
-     border: none;
-     color: #AECFE5;
+     background: black;
+     color: white;
+     line-height: 2em;
  }
 
 
@@ -156,6 +203,8 @@
 
  .splash-container {
      background: #1f8dd6;
+     background-image: url("eric_berkley_1600.jpg");
+     background-position: center;
      z-index: 1;
      overflow: hidden;
      /* The following styles are required for the "scroll-over" effect */
@@ -195,6 +244,8 @@
      letter-spacing: 0.05em;
      opacity: 0.8;
  }
+
+
 
  /*
   * -- CONTENT STYLES --
@@ -347,3 +398,69 @@ table th {
 .list {
   display: inline-block;
 }
+
+.dogdiv {
+  background-image: url('dog_landing.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40em;
+  position: relative;
+}
+
+.walkrdiv {
+  background-image: url('dog_walker.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 40em;
+  position: relative;
+}
+
+.splash-small {
+  width: 80%;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 100px; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.splash-head-small {
+  margin:auto;
+  margin-top: 150px;
+  width: 90%;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  /*border: 3px solid white;*/
+  padding: 1em;
+  font-weight: 500;
+  border-radius: 5px;
+  line-height: 1.5em;
+  background: #77b5ff;
+  opacity:0.8;
+}
+
+/*.splash-small {
+    width: 80%;
+    height: 25%;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    background: #77b5ff;
+    opacity:0.7;
+}*/
+
+/*.splash-head-small {
+    margin: auto;
+    width: 80%;
+    height: 20%;
+    font-size: 30px;
+    font-weight: bold;
+    border: 3px solid white;
+    color: white;
+    padding: 1em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1.5em;
+}*/
