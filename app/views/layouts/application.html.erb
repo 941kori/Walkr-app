@@ -16,8 +16,7 @@
 
 <body>
   <header>
-    <%= render 'layouts/header' %>
- <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
       <a class="pure-menu-heading" href="/">Walkr</a>
 
       <ul class="pure-menu-list">
@@ -26,9 +25,9 @@
           <li class="pure-menu-item"><a href="/signup/" class="pure-menu-link">Sign Up</a></li>
           <li class="pure-menu-item"><a href="/login/" class="pure-menu-link">Log In</a></li>
       </ul>
-  </div>
+    </div>
 
-</header>
+  </header>
 
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
