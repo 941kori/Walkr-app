@@ -19,7 +19,7 @@
   </div>
 
   <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 yellow-back">
-    <h4>Review</h4>
+    <h4>Rating</h4>
   </div>
 
 </div>
@@ -35,6 +35,7 @@
     <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3" style="padding:1em">
       <h3><%= link_to walkr.name, walkr_path(walkr) %></h3>
       <p><%= walkr.description %></p>
+      <p><a href="mailto:<%= walkr.email %>"><%= walkr.email %></a></p>
       <div class="pure-button-left" style="margin-right:0.25em"><%= link_to 'View Walkr', walkr_path(walkr) %></div>
     </div>
 
@@ -48,5 +49,3 @@
   <% end %>
 
 </div>
-
-<br>
