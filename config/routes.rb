@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  get 'sessions/new'
+
   resources :dogs
   resources :walkrs
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
 root 'home#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -20,6 +27,12 @@ get 'walkrs/:id' => 'walkrs#show'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+    get 'signup'  => 'users#new'
+    get    'login'   => 'sessions#new'
+    post   'login'   => 'sessions#create'
+    delete 'logout'  => 'sessions#destroy'
+    resources :users
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

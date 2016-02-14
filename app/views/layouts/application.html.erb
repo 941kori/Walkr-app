@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <title>Walkr</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+=======
+
+
+  <title>Walker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+>>>>>>> log-in-log-out
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
@@ -12,6 +19,7 @@
 
 </head>
 
+<<<<<<< HEAD
 <body>
 
   <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
@@ -23,6 +31,21 @@
       </ul>
   </div>
 
+=======
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/dogs/" class="pure-menu-link">Dogs</a></li>
+            <li class="pure-menu-item"><a href="/walkrs/" class="pure-menu-link">Walkrs</a></li>
+            <li class="pure-menu-item"><a href="/signup/" class="pure-menu-link">Sign Up</a></li>
+            <li class="pure-menu-item"><a href="/login/" class="pure-menu-link">Log In</a></li>
+        </ul>
+    </div>
+</div>
+<body>
+  <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        <% end %>
+>>>>>>> 7d77346c6bd598ec747a64dd35fbdd1a6a241f9e
 <%= yield %>
 
 </body>
