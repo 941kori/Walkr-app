@@ -20,10 +20,21 @@
       <a class="pure-menu-heading" href="/">Walkr</a>
 
       <ul class="pure-menu-list">
-          <li class="pure-menu-item"><a href="/dogs/" class="pure-menu-link">Dogs</a></li>
-          <li class="pure-menu-item"><a href="/walkrs/" class="pure-menu-link">Walkrs</a></li>
-          <li class="pure-menu-item"><a href="/signup/" class="pure-menu-link">Sign Up</a></li>
-          <li class="pure-menu-item"><a href="/login/" class="pure-menu-link">Log In</a></li>
+
+          <% if logged_in? %>
+              <% puts "i see this" %>
+              <li class="pure-menu-item"><a href="/dogs/" class="pure-menu-link">Dogs</a></li>
+              <li class="pure-menu-item"><a href="/walkrs/" class="pure-menu-link">Walkrs</a></li>
+              <li class="pure-menu-item"><a href="#" class="pure-menu-link">Settings</a></li>
+              <li class="pure-menu-item"><%= link_to "Log out", logout_path, method: "delete" %></li>
+
+          <% else %>
+              <li class="pure-menu-item"><a href="/dogs/" class="pure-menu-link">Dogs</a></li>
+              <li class="pure-menu-item"><a href="/walkrs/" class="pure-menu-link">Walkrs</a></li>
+              <li class="pure-menu-item"><a href="/signup/" class="pure-menu-link">Sign Up</a></li>
+              <li class="pure-menu-item"><a href="/login/" class="pure-menu-link">Log In</a></li>
+          <% end %>
+
       </ul>
     </div>
 
