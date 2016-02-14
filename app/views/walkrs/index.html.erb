@@ -1,30 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<div class="list" style="padding-left:4em"><h1>Walkrs</h1></div>
-<div class="pure-button"><%= link_to 'Add a Walkr', new_walkr_path %></div>
+<div class="pure-g">
 
-<table align="center">
-  <thead>
-    <tr>
-      <th>Picture</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Rating</th>
-      <th colspan="3">Admin</th>
-    </tr>
-  </thead>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <h1 style="margin-left:0.25em">Walkrs</h1>
+  </div>
 
-  <tbody>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="pure-button-right" style="margin-right:0.25em"><%= link_to 'Add a Walkr', new_walkr_path %></div>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 yellow-back">
+    <h4>Picture</h4>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 yellow-back">
+    <h4>Name & Description</h4>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 yellow-back">
+    <h4>Review</h4>
+  </div>
+
+</div>
+
+<div class="pure-g">
+
   <% @walkrs.each do |walkr| %>
-    <tr>
-      <td><img style="width:200px" src="<%= walkr.picture %>" alt="<%= walkr.name %>" ></td>
-      <td><%= link_to walkr.name, walkr_path(walkr) %></td>
-      <td><%= walkr.description %></td>
-      <td><%= walkr.rating %></td>
-      <td><%= link_to 'Show', walkr %><br><br><%= link_to 'Edit', edit_walkr_path(walkr) %><br><br><%= link_to 'Destroy', walkr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+
+    <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+      <img style="max-width:100%" src="<%= walkr.picture %>" alt="<%= walkr.name %>" >
+    </div>
+
+    <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3" style="padding:1em">
+      <h3><%= link_to walkr.name, walkr_path(walkr) %></h3>
+      <p><%= walkr.description %></p>
+      <div class="pure-button-left" style="margin-right:0.25em"><%= link_to 'View Walkr', walkr_path(walkr) %></div>
+    </div>
+
+
+    <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3" style="padding:1em">
+      <p><%= walkr.rating %></p>
+      <p><%= link_to 'Edit', edit_walkr_path(walkr) %></p>
+      <p><%= link_to 'Destroy', walkr, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+     </div>
+
   <% end %>
-</tbody>
-</table>
+
+</div>
 
 <br>

@@ -1,8 +1,21 @@
-<h1 style="padding-left:2em">Edit a Walkr</h1>
+<div class="pure-g">
 
-<div style="padding-left:4em">
+  <div class="pure-u-1">
+    <h1 style="margin-left:0.25em; margin-top:1em">Edit a Walkr</h1>
+  </div>
+
+</div>
+
+<div class="pure-u-1 yellow-back">
+  <p class="is-left"><%= link_to 'Back to all Walkrs', walkrs_path %>  |  <%= link_to 'View this Walkr', @walkr %></p>
+</div>
+
+<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3"><img style="max-width:100%" src="<%= @walkr.picture %>" alt="<%= @walkr.name %>" ></div>
+
+<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2" style="padding:1em">
 <%= render 'form' %>
+</div>
 
-<%= link_to 'Show', @walkr %> |
-<%= link_to 'Back', walkrs_path %>
+<div class="pure-u-1 yellow-back">
+  <p class="is-left"><%= link_to 'Back to all Walkrs', walkrs_path %>  |  <%= link_to 'View this Walkr', @walkr %></p>
 </div>

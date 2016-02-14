@@ -1,24 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<table align="center">
-  <thead>
-    <tr>
-      <th>Picture</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Rating</th>
-      <th colspan="2">Admin</th>
-    </tr>
-  </thead>
+<div class="pure-g">
 
-  <tbody>
-      <tr>
-        <td><img style="width:200px" src="<%= @dog.picture %>" alt="<%= @dog.name %>" ></td>
-        <td><%= @dog.name %></td>
-        <td><%= @dog.description %></td>
-        <td><%= @dog.rating %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %><br><br><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <h1 style="margin-left:0.25em">Dogs</h1>
+  </div>
 
-  </tbody>
-</table>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="pure-button-right" style="margin-right:0.25em"><%= link_to 'Add a Dog', new_dog_path %></div>
+  </div>
+
+</div>
+
+<div class="pure-g">
+
+  <div class="pure-u-1 yellow-back">
+    <p class="is-left"><%= link_to 'Back to all Dogs', dogs_path(@dog) %></p>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-3-4 pure-u-lg-3-4">
+    <img style="max-width:100%" src="<%= @dog.picture %>" alt="<%= @dog.name %>" >
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-4" style="padding: 1em">
+    <h4><%= @dog.name %></h4>
+    <p><%= @dog.description %><br><br></p>
+    <p><%= @dog.rating %><br><br></p>
+    <p><%= link_to 'Edit', edit_dog_path(@dog) %><br><br></p>
+    <p><%= link_to 'Destroy', @dog, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+
+  <div class="pure-u-1 yellow-back">
+    <p class="is-left"><%= link_to 'Back to all Dogs', dogs_path(@dog) %></p>
+  </div>
+
+</div>
