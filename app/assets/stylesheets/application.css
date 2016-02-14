@@ -12,8 +12,6 @@
  *
  *= require_tree .
  *= require_self
- */
-/*<<<<<<< HEAD*/
 
  * {
      -webkit-box-sizing: border-box;
@@ -466,8 +464,7 @@ table th {
     border-radius: 5px;
     line-height: 1.5em;
 }*/
-=======
-=======
+
  /* sidebar */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -556,6 +553,3 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
-/*>>>>>>> log-in-log-out
-*/
->>>>>>> 7d77346c6bd598ec747a64dd35fbdd1a6a241f9e
