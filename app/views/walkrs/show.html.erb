@@ -1,24 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @walkr.name %>
-</p>
+<div class="pure-g">
 
-<p>
-  <strong>Description:</strong>
-  <%= @walkr.description %>
-</p>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <h1 style="margin-left:0.25em">walkrs</h1>
+  </div>
 
-<p>
-  <strong>Picture:</strong>
-  <a href="<%= @walkr.picture %>"><img style="width:300px" src="<%= @walkr.picture %>"></a>
-</p>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="pure-button-right" style="margin-right:0.25em"><%= link_to 'Add a walkr', new_walkr_path %></div>
+  </div>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @walkr.rating %>
-</p>
+  <div class="pure-u-1 yellow-back">
+    <p class="is-left"><%= link_to 'Back to all Walkrs', walkrs_path(@walkr) %></p>
+  </div>
 
-<%= link_to 'Edit', edit_walkr_path(@walkr) %> |
-<%= link_to 'Back', walkrs_path %>
+  <div class="pure-u-1 pure-u-md-3-4 pure-u-lg-3-4">
+    <img style="max-width:100%" src="<%= @walkr.picture %>" alt="<%= @walkr.name %>" >
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-4" style="padding: 1em">
+    <h4><%= @walkr.name %></h4>
+    <p><%= @walkr.description %><br><br></p>
+    <p><%= @walkr.rating %></p>
+    <p><%= link_to 'Edit', edit_walkr_path(@walkr) %><br><br></p>
+    <p><%= link_to 'Destroy', @walkr, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+
+  <div class="pure-u-1 yellow-back">
+    <p class="is-left"><%= link_to 'Back to all Walkrs', walkrs_path(@walkr) %></p>
+  </div>
+  
+</div>

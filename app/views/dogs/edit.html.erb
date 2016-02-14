@@ -1,8 +1,21 @@
-<h1 style="padding-left:2em">Edit a Dog</h1>
+<div class="pure-g">
 
-<div style="padding-left:4em">
+  <div class="pure-u-1">
+    <h1 style="margin-left:0.25em; margin-top:1em">Edit a Dog</h1>
+  </div>
+
+</div>
+
+<div class="pure-u-1 yellow-back">
+  <p class="is-left"><%= link_to 'Back to all Dogs', dogs_path %>  |  <%= link_to 'View this Dog', @dog %></p>
+</div>
+
+<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3"><img style="max-width:100%" src="<%= @dog.picture %>" alt="<%= @dog.name %>" ></div>
+
+<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2" style="padding:1em">
 <%= render 'form' %>
+</div>
 
-<%= link_to 'Show', @dog %> |
-<%= link_to 'Back', dogs_path %>
+<div class="pure-u-1 yellow-back">
+  <p class="is-left"><%= link_to 'Back to all Dogs', dogs_path %>  |  <%= link_to 'View this Dog', @dog %></p>
 </div>
