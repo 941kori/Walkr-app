@@ -39,7 +39,7 @@
       <div class="pure-button-left" style="margin-right:0.25em"><%= link_to 'View Dog', dog_path(dog) %></div>
     </div>
 
-    <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3" style="padding:1em">
+    <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3" style="padding:1em; padding-top:2em">
       <p><%= dog.rating %></p>
       <p><%= link_to 'Edit', edit_dog_path(dog) %></p>
       <p><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></p>
@@ -47,4 +47,8 @@
 
   <% end %>
 
+</div>
+
+<div class="pure-u-1 yellow-back">
+  <p class="is-left">Group 5, Copyright 2015</p>
 </div>
