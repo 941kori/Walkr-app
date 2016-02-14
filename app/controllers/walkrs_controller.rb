@@ -70,6 +70,6 @@ class WalkrsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def walkr_params
-      params.require(:walkr).permit(:name, :description, :picture, :rating)
+      params.require(:walkr).permit(:name, :description, :picture, :rating, :email)
     end
 end

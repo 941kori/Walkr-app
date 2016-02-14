@@ -21,6 +21,7 @@
   <div class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-4" style="padding: 1em">
     <h4><%= @walkr.name %></h4>
     <p><%= @walkr.description %><br><br></p>
+    <p><a href="mailto:<%= @walkr.email %>"><%= @walkr.email %></a><br><br></p>
     <p><%= @walkr.rating %></p>
     <p><%= link_to 'Edit', edit_walkr_path(@walkr) %><br><br></p>
     <p><%= link_to 'Destroy', @walkr, method: :delete, data: { confirm: 'Are you sure?' } %></p>
@@ -29,5 +30,5 @@
   <div class="pure-u-1 yellow-back">
     <p class="is-left"><%= link_to 'Back to all Walkrs', walkrs_path(@walkr) %></p>
   </div>
-  
+
 </div>
