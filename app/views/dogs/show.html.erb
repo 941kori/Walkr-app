@@ -26,7 +26,9 @@
     <h4><%= @dog.name %></h4>
     <p><%= @dog.description %><br><br></p>
     <p><a href="mailto:<%= @dog.email %>"><%= @dog.email %></a><br><br></p>
-    <p><%= @dog.rating %><br><br></p>
+    <p><%= @dog.rating %>
+      <i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="font-size:30px"></i>
+      <br><br></p>
     <p><%= link_to 'Edit', edit_dog_path(@dog) %><br><br></p>
     <p><%= link_to 'Destroy', @dog, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
