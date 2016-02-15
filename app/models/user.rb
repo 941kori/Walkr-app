@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :walkrs
   has_many :dogs
   has_many :user_ratings
+  ratyrate_rater
 
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
