@@ -516,9 +516,10 @@ table th {
 }*/
 
  /* sidebar */
-/*@import "bootstrap-sprockets";
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*
 aside {
   section.user_info {
     margin-top: 20px;
