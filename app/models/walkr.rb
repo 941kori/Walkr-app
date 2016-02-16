@@ -1,3 +1,5 @@
 class Walkr < ActiveRecord::Base
-  has_many :walkr_ratings
+  belongs_to :user
+  ratyrate_rateable "rating"
+
 end

@@ -1,6 +1,21 @@
 class UsersController < ApplicationController
  before_action :logged_in_user, only: [:index, :edit, :update]
  before_action :correct_user,   only: [:edit, :update]
+
+
+ # before_action :find_job, only: [:show, :edit, :update, :destroy, :job_owner]
+ # before_action :authenticate_user!,except:[:index]
+ # before_action :job_owner, only: [:edit, :update, :destroy]
+ #
+ # # add this method
+ # def job_owner
+ #  unless @job.user_id == current_user.id
+ #   flash[:notice] = 'Access denied as you are not owner of this Job'
+ #   redirect_to jobs_path
+ #  end
+ # end
+
+
  def index
     @users = User.all
   end
