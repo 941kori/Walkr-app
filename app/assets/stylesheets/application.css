@@ -18,9 +18,12 @@
   * Most of these are inherited from Base, but I want to change a few.
   */
 
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  /*-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;*/
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -61,7 +64,7 @@
  }
 
  h4 {
-   color: 34495e;
+   color: #34495e;
    text-transform: uppercase;
    line-height: 2;
  }
@@ -515,9 +518,9 @@ table th {
     line-height: 1.5em;
 }*/
 
- /* sidebar */
+  /*sidebar - moved these imports to top of doc for validation
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap";*/
 
 /*
 aside {
@@ -601,6 +604,6 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid gray-lighter;
   }
 }
