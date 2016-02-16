@@ -1,11 +1,26 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.name %>
-      </h1>
-      <%= @user.email %>
-    </section>
-  </aside>
+
+<div class="pure-g">
+  <div class="pure-u-1 yellow-back"><p><br></p></div>
+
+  <div class="pure-u-1 yellow-back">
+    <p class="is-left"><%= link_to 'Back to all Walkrs', walkrs_path(@walkr) %></p>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-3-4 pure-u-lg-3-4">
+
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-4" style="padding: 1em">
+    <h4><%= @user.name %></h4>
+
+    <p><%= @user.type %><br><br></p>
+    <p><a href="mailto:<%= @user.email %>"><%= @user.email %></a><br><br></p>
+    <i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="font-size:30px"></i>
+  </div>
+
+  <div class="pure-u-1 yellow-back">
+    <p class="is-left"><%= link_to 'Back to all Walkrs', walkrs_path(@walkr) %></p>
+  </div>
+
 </div>
