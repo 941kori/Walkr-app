@@ -84,8 +84,6 @@ ActiveRecord::Schema.define(version: 20160215185847) do
     t.string   "type"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-
   create_table "walkr_ratings", force: :cascade do |t|
     t.integer  "rating"
     t.datetime "created_at", null: false
