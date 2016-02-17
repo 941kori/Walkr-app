@@ -17,7 +17,7 @@ root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+get 'profile' => 'users#show'
 get 'dogs' => 'dogs#index'
 get 'dog' => 'dogs#show'
 get 'dogs/:id' => 'dogs#show'
@@ -34,6 +34,7 @@ get 'walkrs/:id' => 'walkrs#show'
     post   'login'   => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'
     resources :users
+    resources :session
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
