@@ -59,6 +59,7 @@ class WalkrsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to walkrs_url, notice: 'Walkr was successfully destroyed.' }
       format.json { head :no_content }
+
     end
   end
 
@@ -66,6 +67,15 @@ class WalkrsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_walkr
       @walkr = Walkr.find(params[:id])
+          if current_user.present?
+            unless @walkr.user_id == current_user.id
+            flash[:notice] = 'Access denied as you are not this Walkr!'
+            redirect_to walkrs_path
+          end
+          else
+            redirect_to signup_path
+          end
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
