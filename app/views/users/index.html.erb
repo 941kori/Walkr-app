@@ -1,3 +1,14 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
+
 <% provide(:title, @user.name) %>
 
 <div class="pure-g">
@@ -24,3 +35,4 @@
   </div>
 
 </div>
+>>>>>>> 38593daf045427eb801f56ef9b28a69d3c412243

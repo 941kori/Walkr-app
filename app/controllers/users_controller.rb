@@ -10,6 +10,12 @@ class UsersController < ApplicationController
   # end
 
 
+<<<<<<< HEAD
+  def index
+    @users = User.all
+  end
+=======
+>>>>>>> 38593daf045427eb801f56ef9b28a69d3c412243
 
   def show
     @user = User.find(params[:id])
