@@ -1,6 +1,7 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
 
+
   def dog
     @dog = dog
   end
@@ -30,6 +31,7 @@ class DogsController < ApplicationController
   # POST /dogs.json
   def create
     @dog = Dog.new(dog_params)
+    @dog.user_id = current_user.id
 
     respond_to do |format|
       if @dog.save
@@ -70,7 +72,16 @@ class DogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_dog
       @dog = Dog.find(params[:id])
+      if current_user.present?
+          unless @dog.user_id == current_user.id
+          flash[:notice] = 'Access denied as you are not owner of this Dog!'
+          redirect_to dogs_path
+        end
+      else
+        redirect_to signup_path 
+      end
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params

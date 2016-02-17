@@ -1,24 +1,15 @@
 class UsersController < ApplicationController
  before_action :logged_in_user, only: [:index, :edit, :update]
  before_action :correct_user,   only: [:edit, :update]
+ # before_action :job_owner, only: [:edit, :update, :destroy, :show]
 
 
- # before_action :find_job, only: [:show, :edit, :update, :destroy, :job_owner]
- # before_action :authenticate_user!,except:[:index]
- # before_action :job_owner, only: [:edit, :update, :destroy]
- #
- # # add this method
- # def job_owner
- #  unless @job.user_id == current_user.id
- #   flash[:notice] = 'Access denied as you are not owner of this Job'
- #   redirect_to jobs_path
- #  end
- # end
+
+  # def job_owner
+  #
+  # end
 
 
- def index
-    @users = User.all
-  end
 
   def show
     @user = User.find(params[:id])
@@ -27,6 +18,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
 
   def create
     @user = User.new(user_params)
@@ -56,8 +48,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-       params.require(:user).permit(:name, :email, :password,
-                                    :password_confirmation)
+       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
      # Before filters
@@ -68,6 +59,11 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
+      #
+      # def index
+      #    @users = User.all
+      #    @user = currect_user
+      #  end
 
     end
 end
