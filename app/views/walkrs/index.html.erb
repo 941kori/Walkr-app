@@ -44,7 +44,7 @@
       <p><%= walkr.rating %></p>
       <i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="color:red; font-size:30px"></i><i class="fa fa-star" style="font-size:30px"></i>
       <% if current_user.present? %>
-      <% if dog.user_id == current_user.id %>
+      <% if walkr.user_id == current_user.id %>
       <p><%= link_to 'Edit', edit_walkr_path(walkr) %></p>
       <p><%= link_to 'Destroy', walkr, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       <% end %>
